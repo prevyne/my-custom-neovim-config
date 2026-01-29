@@ -6,7 +6,10 @@ require("config.lsp")
 require("config.lint")
 require("config.cmp")
 
-vim.cmd("hi Normal ctermbg=NONE guibg=NONE")
+--Tell Neovim to use my custom Color Theme
+vim.cmd.colorscheme("hacker_green_ultimate")
+
+--vim.cmd("hi Normal ctermbg=NONE guibg=NONE")
 
 -- Tell Neovim to use the terminal's colors for the base editor
 vim.cmd([[
