@@ -13,7 +13,7 @@ local c = {
   black       = "#000000",
   neon_green  = "#00FF00",
   dim_green   = "#004400",
-  bright_pink = "#FF007F",
+  bright_pink = "#FF98DB",
 
   magenta     = "#FF00FF",
   gold        = "#FFD700",
