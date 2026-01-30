@@ -10,9 +10,10 @@ vim.g.colors_name = "hacker_green_ultimate"
 -- PALETTE
 -- =========================
 local c = {
-  black        = "#000000",
+  black       = "#000000",
   neon_green  = "#00FF00",
   dim_green   = "#004400",
+  bright_pink = "#FF007F",
 
   magenta     = "#FF00FF",
   gold        = "#FFD700",
@@ -21,7 +22,7 @@ local c = {
   white       = "#FFFFFF",
   blue        = "#44AAFF",
   red         = "#FF3333",
-  hibiscus   = "#bf2473",
+  hibiscus    = "#bf2473",
 
   selection_bg = "#003b00",
   selection_fg = "#66ff66",
@@ -45,7 +46,7 @@ hl("VertSplit",     { fg = c.dim_green })
 hl("Visual", {
   bg = c.selection_bg,
   fg = c.selection_fg,
-  underline = true,
+  underline = false,
 })
 hl("CursorLine", {
   bg = "#002800",
@@ -54,7 +55,7 @@ hl("CursorLine", {
 -- =========================
 -- COMMENTS & DOCSTRINGS
 -- =========================
-hl("Comment", { fg = c.dim_green, italic = true })
+hl("Comment", { fg = c.bright_pink, italic = true })
 
 -- =========================
 -- KEYWORDS & STRUCTURE
