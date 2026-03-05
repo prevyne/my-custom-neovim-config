@@ -5,8 +5,10 @@
 require("mason").setup()
 
 require("mason-lspconfig").setup({
-  ensure_installed = { "pyright", "clangd" },
+  ensure_installed = { "pyright", "clangd", "html", "htmldjango"},
 })
+
+local lspconfig = require("lspconfig")
 
 local function get_python_path()
   local venv = os.getenv("VIRTUAL_ENV")
@@ -22,6 +24,19 @@ local function get_python_path()
   return "python3"
 end
 
+lspconfig.pyright.setup({
+  settings = {
+    python = {
+      pythonPath = get_python_path(),
+      analysis = {
+        typeCheckingMode = "basic",
+        autoSearchPaths = true,
+        useLibraryCodeForTypes = true,
+        diagnosticMode = "workspace",
+      },
+    },
+  },
+})
 
 -- LSP attach behavior
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -75,3 +90,11 @@ vim.diagnostic.config({
   update_in_insert = true,
   severity_sort = true,
 })
+
+--Formatting + Linting for Django
+--Recomended Stach (I install them via Mason):
+  --Black -> Formatting
+  --isort -> Imports
+  --ruff -> Linting (Modern and fast)
+
+lspconfig.ruff.setup({})

@@ -7,3 +7,9 @@ vim.opt.smartindent = true
 vim.opt.termguicolors = true
 vim.opt.cursorline = true
 
+--For Djnago template detection
+vim.filetype.add({
+  pattern = {
+    [".*%.html"] = "htmldjango",
+  },
+})

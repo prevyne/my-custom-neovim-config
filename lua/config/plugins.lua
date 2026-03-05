@@ -54,6 +54,15 @@ require("lazy").setup({
    -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "python",
+        "html",
+        "css",
+        "javascript",
+      },
+    },
+  }
     build = ":TSUpdate",
   },
 
