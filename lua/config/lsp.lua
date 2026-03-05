@@ -5,7 +5,7 @@
 require("mason").setup()
 
 require("mason-lspconfig").setup({
-  ensure_installed = { "pyright" },
+  ensure_installed = { "pyright", "clangd" },
 })
 
 local function get_python_path()
@@ -40,7 +40,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
--- Native server configuration (NEW API)
+-- Native pyright server configuration.
 vim.lsp.config("pyright", {
   settings = {
     python = {
@@ -54,8 +54,18 @@ vim.lsp.config("pyright", {
   },
 })
 
--- Enable the server
+-- Enable the pyright server
 vim.lsp.enable("pyright")
+
+--Clang server configuration
+vim.lsp.config("clangd", {
+  cmd = { "clangd", "--background-index" },
+  filetypes = { "c", "cpp", "objc", "objcpp" },
+  root_markers = { ".git", "compile_commands.json", "Makefile" },
+})
+
+--Enable clang server
+vim.lsp.enable("clangd")
 
 -- Diagnostics UI
 vim.diagnostic.config({

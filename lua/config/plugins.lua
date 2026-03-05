@@ -51,5 +51,13 @@ require("lazy").setup({
     },
   },
 
+   -- Treesitter
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+  },
+
+  -- Lint / Format
+  "nvimtools/none-ls.nvim",
 
 })
