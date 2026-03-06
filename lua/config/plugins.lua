@@ -17,7 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 
-  -- Cyberpunk theme
+   -- Cyberpunk theme
   {
     "rockerBOO/boo-colorscheme-nvim",
     priority = 1000,
@@ -26,17 +26,17 @@ require("lazy").setup({
     end,
   },
 
-  -- LSP
+   -- LSP
   "neovim/nvim-lspconfig",
 
-  -- Mason
+   -- Mason
   {
     "williamboman/mason.nvim",
     config = true,
   },
   "williamboman/mason-lspconfig.nvim",
 
-  -- Linting
+   -- Linting
   "mfussenegger/nvim-lint",
 
     -- Autocompletion
@@ -62,11 +62,9 @@ require("lazy").setup({
         "javascript",
       },
     },
-  }
     build = ":TSUpdate",
   },
 
   -- Lint / Format
-  "nvimtools/none-ls.nvim",
-
+  "nvimtools/none-ls.nvim";
 })
