@@ -1,5 +1,7 @@
 -- init.lua
 
+vim.g.mapleader = ' '
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
@@ -20,6 +22,8 @@ require("config.plugins")
 require("config.lsp")
 require("config.lint")
 require("config.cmp")
+
+vim.keymap.set('n', '<leader>ff', '<cmd>FzfLua files<cr>')
 
 --Tell Neovim to use my custom Color Theme
 vim.cmd.colorscheme("hacker_green_ultimate")

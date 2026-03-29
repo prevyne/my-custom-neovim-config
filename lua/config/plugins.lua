@@ -67,4 +67,18 @@ require("lazy").setup({
 
   -- Lint / Format
   "nvimtools/none-ls.nvim";
+
+  -- fzf-lua
+  {
+  "ibhagwan/fzf-lua",
+  dependencies = {
+    "nvim-tree/nvim-web-devicons"  -- optional for icons
+  }
+}
 })
+
+
+
+
+
+
