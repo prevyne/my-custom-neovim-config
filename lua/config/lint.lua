@@ -4,6 +4,7 @@ local lint = require("lint")
 
 lint.linters_by_ft = {
   python = { "flake8", "pycodestyle" },
+  lua = { "luacheck" },
 }
 
 -- When linting runs

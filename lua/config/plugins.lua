@@ -22,7 +22,7 @@ require("lazy").setup({
     "rockerBOO/boo-colorscheme-nvim",
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme("boo")
+      vim.cmd.colorscheme("vim")
     end,
   },
 
@@ -56,13 +56,13 @@ require("lazy").setup({
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
-        "python",
         "html",
         "css",
         "javascript",
       },
     },
     build = ":TSUpdate",
+    highlight = { enable = true, disable = { "python" } },
   },
 
   -- Lint / Format
@@ -72,13 +72,18 @@ require("lazy").setup({
   {
   "ibhagwan/fzf-lua",
   dependencies = {
-    "nvim-tree/nvim-web-devicons"  -- optional for icons
+    "nvim-tree/nvim-web-devicons"
   }
+},
+
+  -- Semshi python syntax highlighter
+  {
+  "wookayin/semshi",
+  build = ":UpdateRemotePlugins",
+  config = function()
+    -- Optional: Disable error signs to reduce clutter
+    vim.g['semshi#error_sign'] = false
+  end
 }
+
 })
-
-
-
-
-
-

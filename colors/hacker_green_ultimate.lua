@@ -6,9 +6,7 @@ vim.cmd("highlight clear")
 vim.cmd("set termguicolors")
 vim.g.colors_name = "hacker_green_ultimate"
 
--- =========================
 -- PALETTE
--- =========================
 local c = {
   black       = "#000000",
   neon_green  = "#00FF00",
@@ -33,9 +31,7 @@ local function hl(group, opts)
   vim.api.nvim_set_hl(0, group, opts)
 end
 
--- =========================
 -- GLOBAL UI
--- =========================
 hl("Normal",        { fg = c.neon_green, bg = c.black })
 hl("Cursor",        { fg = c.black, bg = c.neon_green })
 hl("Visual",        { bg = c.selection })
@@ -52,14 +48,10 @@ hl("CursorLine", {
   bg = "#002800",
 })
 
--- =========================
 -- COMMENTS & DOCSTRINGS
--- =========================
 hl("Comment", { fg = c.bright_pink, italic = true })
 
--- =========================
 -- KEYWORDS & STRUCTURE
--- =========================
 hl("Keyword",        { fg = c.white, italic = true })
 hl("Conditional",   { fg = c.white, italic = true })
 hl("Repeat",        { fg = c.white, italic = true })
@@ -69,10 +61,8 @@ hl("Include",       { fg = c.magenta, italic = true })
 hl("Define",        { fg = c.magenta, italic = true })
 hl("StorageClass",  { fg = c.magenta, italic = true })
 
--- =========================
 -- ENTITIES & NAMES
--- =========================
-hl("Function",      { fg = c.white, bold = true })
+hl("Function",      { fg = c.orange, bold = true })
 hl("Identifier",   { fg = c.neon_green })
 hl("Parameter",    { fg = c.white, italic = true })
 
@@ -82,31 +72,23 @@ hl("Structure",     { fg = c.hibiscus, italic = true })
 hl("Field",         { fg = c.gold, italic = true })
 hl("Property",      { fg = c.gold, italic = true })
 
--- =========================
 -- LITERALS & CONSTANTS
--- =========================
 hl("String",        { fg = c.cyan })
 hl("Number",        { fg = c.neon_green })
 hl("Boolean",       { fg = c.neon_green })
 hl("Constant",      { fg = c.neon_green })
 
--- =========================
 -- PYTHON SPECIALS
--- =========================
 hl("Special",       { fg = c.orange, italic = true }) -- self / cls
 hl("Builtin",       { fg = c.blue })
 hl("Exception",     { fg = c.red, bold = true })
 hl("Decorator",     { fg = c.gold })
 
--- =========================
 -- OPERATORS & SYMBOLS
--- =========================
 hl("Operator",      { fg = c.gold })
 hl("Delimiter",     { fg = c.gold })
 
--- =========================
 -- TREE-SITTER MAPPINGS
--- =========================
 hl("@comment",                  { link = "Comment" })
 
 hl("@keyword",                  { fg = c.white, italic = true })

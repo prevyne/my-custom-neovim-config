@@ -6,10 +6,22 @@ require("mason").setup()
 
 require("mason-lspconfig").setup({
   ensure_installed = { "pyright", "pyflakes", "clangd",
-   "html", "emmet_ls", "djlint"},
-})
+   "html", "emmet_ls"},
 
---local lspconfig = require("lspconfig")
+   handlers = {
+    lua_ls = function()
+      require('lspconfig').lua_ls.setup({
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { 'vim' },
+            },
+          },
+        },
+      })
+    end,
+  },
+})
 
 local function get_python_path()
   local venv = os.getenv("VIRTUAL_ENV")
@@ -38,7 +50,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
     vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-    vim.keymap.set('n', '<leader>ff', '<cmd>FzfLua files<cr>', { desc = 'Fuzzy find files' })
     vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
   end,
 })
@@ -78,11 +89,3 @@ vim.diagnostic.config({
   update_in_insert = true,
   severity_sort = true,
 })
-
---Formatting + Linting for Django
---Recomended Stach (I'll install them via Mason, ...later):
-  --Black -> Formatting
-  --isort -> Imports
-  --ruff -> Linting (Modern and fast)
-
---vim.lsp.config.ruff.setup({})
