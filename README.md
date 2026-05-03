@@ -32,7 +32,7 @@ Before installing, ensure your system has the following dependencies:
     ```
     *The `lazy.nvim` package manager will automatically bootstrap itself and install all required plugins upon the first launch.*
 
-## 🧩 Plugin Ecosystem
+## Plugin Ecosystem
 This setup utilizes a curated list of powerful plugins to enhance the developer experience without bloating system memory:
 *   **Plugin Manager:** `lazy.nvim`.
 *   **LSP & Tooling:** 
@@ -45,7 +45,7 @@ This setup utilizes a curated list of powerful plugins to enhance the developer 
     *   `semshi` is explicitly used for superior Python syntax highlighting, with Treesitter's Python parsing disabled to prevent conflicts. Error signs in `semshi` are disabled to reduce visual clutter.
 *   **Linting & Formatting:** `nvim-lint` and `none-ls.nvim` are integrated, triggering tools like `flake8`, `pycodestyle`, and `luacheck` automatically when saving or leaving insert mode.
 
-## ⌨️ Keybindings & Usage
+## Keybindings & Usage
 The leader key is mapped to `<Space>`.
 
 ### General Navigation & Search (Fzf-Lua)
